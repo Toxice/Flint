@@ -1,0 +1,24 @@
+func escapes(): Void {
+    let quoted: String = "he said \"hi\" and left"
+    let backslash: String = "a\\b"
+    let brace: Char = '{'
+    let tick: Char = '\''
+}
+
+func identifiers(): Void {
+    let index: Int = 0
+    let inner: Int = 1
+    let printer: Int = 2
+    let classy: Int = 3
+    for (item: Int in [index, inner]) {
+        print(item)
+    }
+}
+
+func colons(): Void {
+    let annotated: Int = 1
+    let mapped: [String: Int] = ["k": 1]
+}
+
+class Alone : Exception { }
+$ A trailing docstring with no newline after it.

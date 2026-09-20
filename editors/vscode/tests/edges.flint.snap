@@ -1,0 +1,160 @@
+>func escapes(): Void {
+#^^^^ source.flint keyword.declaration.flint
+#    ^ source.flint
+#     ^^^^^^^ source.flint entity.name.function.flint
+#            ^^^^ source.flint
+#                ^^^^ source.flint support.type.primitive.flint
+#                    ^^^ source.flint
+>    let quoted: String = "he said \"hi\" and left"
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^^ source.flint
+#                ^^^^^^ source.flint support.type.primitive.flint
+#                      ^ source.flint
+#                       ^ source.flint keyword.operator.flint
+#                        ^ source.flint
+#                         ^ source.flint string.quoted.double.flint
+#                          ^^^^^^^^ source.flint string.quoted.double.flint
+#                                  ^^ source.flint string.quoted.double.flint constant.character.escape.flint
+#                                    ^^ source.flint string.quoted.double.flint
+#                                      ^^ source.flint string.quoted.double.flint constant.character.escape.flint
+#                                        ^^^^^^^^^ source.flint string.quoted.double.flint
+#                                                 ^ source.flint string.quoted.double.flint
+>    let backslash: String = "a\\b"
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^^^^^ source.flint
+#                   ^^^^^^ source.flint support.type.primitive.flint
+#                         ^ source.flint
+#                          ^ source.flint keyword.operator.flint
+#                           ^ source.flint
+#                            ^ source.flint string.quoted.double.flint
+#                             ^ source.flint string.quoted.double.flint
+#                              ^^ source.flint string.quoted.double.flint constant.character.escape.flint
+#                                ^ source.flint string.quoted.double.flint
+#                                 ^ source.flint string.quoted.double.flint
+>    let brace: Char = '{'
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^ source.flint
+#               ^^^^ source.flint support.type.primitive.flint
+#                   ^ source.flint
+#                    ^ source.flint keyword.operator.flint
+#                     ^ source.flint
+#                      ^^^ source.flint string.quoted.single.flint
+>    let tick: Char = '\''
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^ source.flint
+#              ^^^^ source.flint support.type.primitive.flint
+#                  ^ source.flint
+#                   ^ source.flint keyword.operator.flint
+#                    ^ source.flint
+#                     ^^^^ source.flint string.quoted.single.flint
+>}
+#^^ source.flint
+>
+>func identifiers(): Void {
+#^^^^ source.flint keyword.declaration.flint
+#    ^ source.flint
+#     ^^^^^^^^^^^ source.flint entity.name.function.flint
+#                ^^^^ source.flint
+#                    ^^^^ source.flint support.type.primitive.flint
+#                        ^^^ source.flint
+>    let index: Int = 0
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^ source.flint
+#               ^^^ source.flint support.type.primitive.flint
+#                  ^ source.flint
+#                   ^ source.flint keyword.operator.flint
+#                    ^ source.flint
+#                     ^ source.flint constant.numeric.integer.flint
+>    let inner: Int = 1
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^ source.flint
+#               ^^^ source.flint support.type.primitive.flint
+#                  ^ source.flint
+#                   ^ source.flint keyword.operator.flint
+#                    ^ source.flint
+#                     ^ source.flint constant.numeric.integer.flint
+>    let printer: Int = 2
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^^^ source.flint
+#                 ^^^ source.flint support.type.primitive.flint
+#                    ^ source.flint
+#                     ^ source.flint keyword.operator.flint
+#                      ^ source.flint
+#                       ^ source.flint constant.numeric.integer.flint
+>    let classy: Int = 3
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^^ source.flint
+#                ^^^ source.flint support.type.primitive.flint
+#                   ^ source.flint
+#                    ^ source.flint keyword.operator.flint
+#                     ^ source.flint
+#                      ^ source.flint constant.numeric.integer.flint
+>    for (item: Int in [index, inner]) {
+#^^^^ source.flint
+#    ^^^ source.flint keyword.control.flint
+#       ^^^^^^^^ source.flint
+#               ^^^ source.flint support.type.primitive.flint
+#                  ^ source.flint
+#                   ^^ source.flint keyword.control.flint
+#                     ^^^^^^^^^^^^^^^^^^^ source.flint
+>        print(item)
+#^^^^^^^^ source.flint
+#        ^^^^^ source.flint support.function.builtin.flint
+#             ^^^^^^^ source.flint
+>    }
+#^^^^^^ source.flint
+>}
+#^^ source.flint
+>
+>func colons(): Void {
+#^^^^ source.flint keyword.declaration.flint
+#    ^ source.flint
+#     ^^^^^^ source.flint entity.name.function.flint
+#           ^^^^ source.flint
+#               ^^^^ source.flint support.type.primitive.flint
+#                   ^^^ source.flint
+>    let annotated: Int = 1
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^^^^^ source.flint
+#                   ^^^ source.flint support.type.primitive.flint
+#                      ^ source.flint
+#                       ^ source.flint keyword.operator.flint
+#                        ^ source.flint
+#                         ^ source.flint constant.numeric.integer.flint
+>    let mapped: [String: Int] = ["k": 1]
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^^^ source.flint
+#                 ^^^^^^ source.flint support.type.primitive.flint
+#                       ^^ source.flint
+#                         ^^^ source.flint support.type.primitive.flint
+#                            ^^ source.flint
+#                              ^ source.flint keyword.operator.flint
+#                               ^^ source.flint
+#                                 ^ source.flint string.quoted.double.flint
+#                                  ^ source.flint string.quoted.double.flint
+#                                   ^ source.flint string.quoted.double.flint
+#                                    ^^ source.flint
+#                                      ^ source.flint constant.numeric.integer.flint
+#                                       ^^ source.flint
+>}
+#^^ source.flint
+>
+>class Alone : Exception { }
+#^^^^^ source.flint keyword.declaration.flint
+#     ^ source.flint
+#      ^^^^^ source.flint entity.name.type.flint
+#           ^^^ source.flint
+#              ^^^^^^^^^ source.flint entity.name.type.flint
+#                       ^^^^^ source.flint
+>$ A trailing docstring with no newline after it.
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.flint comment.line.documentation.flint

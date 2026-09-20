@@ -1,0 +1,115 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Flint",
+  "scopeName": "source.flint",
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#docstring" },
+    { "include": "#string" },
+    { "include": "#char" },
+    { "include": "#number" },
+    { "include": "#declaration" },
+    { "include": "#keyword" },
+    { "include": "#type" },
+    { "include": "#operator" }
+  ],
+  "repository": {
+    "comment": {
+      "name": "comment.line.double-slash.flint",
+      "match": "//.*$"
+    },
+    "docstring": {
+      "name": "comment.line.documentation.flint",
+      "match": "\\$.*$"
+    },
+    "string": {
+      "name": "string.quoted.double.flint",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.flint",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "char": {
+      "name": "string.quoted.single.flint",
+      "match": "'(\\\\.|[^'\\\\])'"
+    },
+    "number": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.flint",
+          "match": "\\b[0-9]+\\.[0-9]+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.flint",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
+    },
+    "declaration": {
+      "patterns": [
+        {
+          "match": "\\b(func)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": { "name": "keyword.declaration.flint" },
+            "2": { "name": "entity.name.function.flint" }
+          }
+        },
+        {
+          "match": "\\b(class|interface)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "captures": {
+            "1": { "name": "keyword.declaration.flint" },
+            "2": { "name": "entity.name.type.flint" }
+          }
+        }
+      ]
+    },
+    "keyword": {
+      "patterns": [
+        {
+          "name": "keyword.control.flint",
+          "match": "\\b(if|else|while|for|in|return|try|catch|throw)\\b"
+        },
+        {
+          "name": "keyword.declaration.flint",
+          "match": "\\b(let|func|class|interface|abstract)\\b"
+        },
+        {
+          "name": "storage.modifier.flint",
+          "match": "\\b(private|public)\\b"
+        },
+        {
+          "name": "variable.language.flint",
+          "match": "\\bobject\\b"
+        },
+        {
+          "name": "constant.language.boolean.flint",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "support.function.builtin.flint",
+          "match": "\\b(print|len)\\b(?=\\s*\\()"
+        }
+      ]
+    },
+    "type": {
+      "patterns": [
+        {
+          "name": "support.type.primitive.flint",
+          "match": "\\b(Int|Float|Bool|String|Char|Void)\\b"
+        },
+        {
+          "name": "entity.name.type.flint",
+          "match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+        }
+      ]
+    },
+    "operator": {
+      "name": "keyword.operator.flint",
+      "match": "(==|!=|<=|>=|&&|\\|\\||[-+*/%<>=!])"
+    }
+  }
+}

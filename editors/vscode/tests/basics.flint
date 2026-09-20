@@ -1,0 +1,32 @@
+$ Anything that has a measurable area.
+interface Shape {
+    func area(): Float
+}
+
+abstract class BaseShape : Shape {
+    private name: String
+
+    BaseShape(name: String) { object.name = name }
+
+    func describe(): String {
+        return object.name + " has area " + object.area()
+    }
+}
+
+class Rectangle : BaseShape {
+    width: Float
+    height: Float
+
+    func area(): Float { return object.width * object.height }
+}
+
+// A plain line comment.
+func main(): Void {
+    let shapes: [Shape] = [Rectangle("Rect1", 4.0, 5.0)]
+    let counts: [String: Int] = ["a": 1, "b": 2]
+    let ok: Bool = true
+    let initial: Char = 'R'
+    if len(shapes) > 0 && ok != false {
+        print(shapes)
+    }
+}

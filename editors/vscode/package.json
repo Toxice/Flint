@@ -37,6 +37,13 @@
           "dark": "./icons/flint.png"
         }
       }
+    ],
+    "grammars": [
+      {
+        "language": "flint",
+        "scopeName": "source.flint",
+        "path": "./syntaxes/flint.tmLanguage.json"
+      }
     ]
   },
   "scripts": {

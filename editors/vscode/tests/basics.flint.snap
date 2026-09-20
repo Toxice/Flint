@@ -1,0 +1,197 @@
+>$ Anything that has a measurable area.
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.flint comment.line.documentation.flint
+>interface Shape {
+#^^^^^^^^^ source.flint keyword.declaration.flint
+#         ^ source.flint
+#          ^^^^^ source.flint entity.name.type.flint
+#               ^^^ source.flint
+>    func area(): Float
+#^^^^ source.flint
+#    ^^^^ source.flint keyword.declaration.flint
+#        ^ source.flint
+#         ^^^^ source.flint entity.name.function.flint
+#             ^^^^ source.flint
+#                 ^^^^^ source.flint support.type.primitive.flint
+>}
+#^^ source.flint
+>
+>abstract class BaseShape : Shape {
+#^^^^^^^^ source.flint keyword.declaration.flint
+#        ^ source.flint
+#         ^^^^^ source.flint keyword.declaration.flint
+#              ^ source.flint
+#               ^^^^^^^^^ source.flint entity.name.type.flint
+#                        ^^^ source.flint
+#                           ^^^^^ source.flint entity.name.type.flint
+#                                ^^^ source.flint
+>    private name: String
+#^^^^ source.flint
+#    ^^^^^^^ source.flint storage.modifier.flint
+#           ^^^^^^^ source.flint
+#                  ^^^^^^ source.flint support.type.primitive.flint
+>
+>    BaseShape(name: String) { object.name = name }
+#^^^^ source.flint
+#    ^^^^^^^^^ source.flint entity.name.type.flint
+#             ^^^^^^^ source.flint
+#                    ^^^^^^ source.flint support.type.primitive.flint
+#                          ^^^^ source.flint
+#                              ^^^^^^ source.flint variable.language.flint
+#                                    ^^^^^^ source.flint
+#                                          ^ source.flint keyword.operator.flint
+#                                           ^^^^^^^^ source.flint
+>
+>    func describe(): String {
+#^^^^ source.flint
+#    ^^^^ source.flint keyword.declaration.flint
+#        ^ source.flint
+#         ^^^^^^^^ source.flint entity.name.function.flint
+#                 ^^^^ source.flint
+#                     ^^^^^^ source.flint support.type.primitive.flint
+#                           ^^^ source.flint
+>        return object.name + " has area " + object.area()
+#^^^^^^^^ source.flint
+#        ^^^^^^ source.flint keyword.control.flint
+#              ^ source.flint
+#               ^^^^^^ source.flint variable.language.flint
+#                     ^^^^^^ source.flint
+#                           ^ source.flint keyword.operator.flint
+#                            ^ source.flint
+#                             ^ source.flint string.quoted.double.flint
+#                              ^^^^^^^^^^ source.flint string.quoted.double.flint
+#                                        ^ source.flint string.quoted.double.flint
+#                                         ^ source.flint
+#                                          ^ source.flint keyword.operator.flint
+#                                           ^ source.flint
+#                                            ^^^^^^ source.flint variable.language.flint
+#                                                  ^^^^^^^^ source.flint
+>    }
+#^^^^^^ source.flint
+>}
+#^^ source.flint
+>
+>class Rectangle : BaseShape {
+#^^^^^ source.flint keyword.declaration.flint
+#     ^ source.flint
+#      ^^^^^^^^^ source.flint entity.name.type.flint
+#               ^^^ source.flint
+#                  ^^^^^^^^^ source.flint entity.name.type.flint
+#                           ^^^ source.flint
+>    width: Float
+#^^^^^^^^^^^ source.flint
+#           ^^^^^ source.flint support.type.primitive.flint
+>    height: Float
+#^^^^^^^^^^^^ source.flint
+#            ^^^^^ source.flint support.type.primitive.flint
+>
+>    func area(): Float { return object.width * object.height }
+#^^^^ source.flint
+#    ^^^^ source.flint keyword.declaration.flint
+#        ^ source.flint
+#         ^^^^ source.flint entity.name.function.flint
+#             ^^^^ source.flint
+#                 ^^^^^ source.flint support.type.primitive.flint
+#                      ^^^ source.flint
+#                         ^^^^^^ source.flint keyword.control.flint
+#                               ^ source.flint
+#                                ^^^^^^ source.flint variable.language.flint
+#                                      ^^^^^^^ source.flint
+#                                             ^ source.flint keyword.operator.flint
+#                                              ^ source.flint
+#                                               ^^^^^^ source.flint variable.language.flint
+#                                                     ^^^^^^^^^^ source.flint
+>}
+#^^ source.flint
+>
+>// A plain line comment.
+#^^^^^^^^^^^^^^^^^^^^^^^^ source.flint comment.line.double-slash.flint
+>func main(): Void {
+#^^^^ source.flint keyword.declaration.flint
+#    ^ source.flint
+#     ^^^^ source.flint entity.name.function.flint
+#         ^^^^ source.flint
+#             ^^^^ source.flint support.type.primitive.flint
+#                 ^^^ source.flint
+>    let shapes: [Shape] = [Rectangle("Rect1", 4.0, 5.0)]
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^^^ source.flint
+#                 ^^^^^ source.flint entity.name.type.flint
+#                      ^^ source.flint
+#                        ^ source.flint keyword.operator.flint
+#                         ^^ source.flint
+#                           ^^^^^^^^^ source.flint entity.name.type.flint
+#                                    ^ source.flint
+#                                     ^ source.flint string.quoted.double.flint
+#                                      ^^^^^ source.flint string.quoted.double.flint
+#                                           ^ source.flint string.quoted.double.flint
+#                                            ^^ source.flint
+#                                              ^^^ source.flint constant.numeric.float.flint
+#                                                 ^^ source.flint
+#                                                   ^^^ source.flint constant.numeric.float.flint
+#                                                      ^^^ source.flint
+>    let counts: [String: Int] = ["a": 1, "b": 2]
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^^^ source.flint
+#                 ^^^^^^ source.flint support.type.primitive.flint
+#                       ^^ source.flint
+#                         ^^^ source.flint support.type.primitive.flint
+#                            ^^ source.flint
+#                              ^ source.flint keyword.operator.flint
+#                               ^^ source.flint
+#                                 ^ source.flint string.quoted.double.flint
+#                                  ^ source.flint string.quoted.double.flint
+#                                   ^ source.flint string.quoted.double.flint
+#                                    ^^ source.flint
+#                                      ^ source.flint constant.numeric.integer.flint
+#                                       ^^ source.flint
+#                                         ^ source.flint string.quoted.double.flint
+#                                          ^ source.flint string.quoted.double.flint
+#                                           ^ source.flint string.quoted.double.flint
+#                                            ^^ source.flint
+#                                              ^ source.flint constant.numeric.integer.flint
+#                                               ^^ source.flint
+>    let ok: Bool = true
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^ source.flint
+#            ^^^^ source.flint support.type.primitive.flint
+#                ^ source.flint
+#                 ^ source.flint keyword.operator.flint
+#                  ^ source.flint
+#                   ^^^^ source.flint constant.language.boolean.flint
+>    let initial: Char = 'R'
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^^^ source.flint
+#                 ^^^^ source.flint support.type.primitive.flint
+#                     ^ source.flint
+#                      ^ source.flint keyword.operator.flint
+#                       ^ source.flint
+#                        ^^^ source.flint string.quoted.single.flint
+>    if len(shapes) > 0 && ok != false {
+#^^^^ source.flint
+#    ^^ source.flint keyword.control.flint
+#      ^ source.flint
+#       ^^^ source.flint support.function.builtin.flint
+#          ^^^^^^^^^ source.flint
+#                   ^ source.flint keyword.operator.flint
+#                    ^ source.flint
+#                     ^ source.flint constant.numeric.integer.flint
+#                      ^ source.flint
+#                       ^^ source.flint keyword.operator.flint
+#                         ^^^^ source.flint
+#                             ^^ source.flint keyword.operator.flint
+#                               ^ source.flint
+#                                ^^^^^ source.flint constant.language.boolean.flint
+#                                     ^^^ source.flint
+>        print(shapes)
+#^^^^^^^^ source.flint
+#        ^^^^^ source.flint support.function.builtin.flint
+#             ^^^^^^^^^ source.flint
+>    }
+#^^^^^^ source.flint
+>}
+#^^ source.flint
+>
