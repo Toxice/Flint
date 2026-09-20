@@ -14,3 +14,7 @@ coverage.out
 .idea/
 .DS_Store
 Thumbs.db
+
+# VS Code extension
+editors/vscode/node_modules/
+editors/vscode/*.vsix
