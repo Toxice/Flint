@@ -30,3 +30,25 @@ func main(): Void {
         print(shapes)
     }
 }
+
+class NegativeAreaError : Exception { }
+
+class Guarded : BaseShape {
+    public label: String
+    private secret: Int
+
+    func check(n: Int): Void {
+        while n > 0 {
+            if n == 1 {
+                throw NegativeAreaError("bad")
+            } else {
+                print(n)
+            }
+        }
+        try {
+            print(len("abc"))
+        } catch (e: Exception) {
+            print("caught")
+        }
+    }
+}

@@ -42,8 +42,12 @@ npm test              # verify grammar scopes against snapshots
 npm run test:update   # re-record snapshots after an intentional change
 ```
 
-Open the repository root in VS Code and press F5 to launch an Extension
-Development Host with the extension loaded.
+To try the extension without installing it, launch an Extension Development
+Host from the repository root:
+
+```bash
+code --extensionDevelopmentPath="$PWD/editors/vscode" examples/hello.flint
+```
 
 The grammar's source of truth is `internal/token/token.go`. If a keyword is
 added there, add it to `syntaxes/flint.tmLanguage.json` and re-record the

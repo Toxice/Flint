@@ -195,3 +195,112 @@
 >}
 #^^ source.flint
 >
+>class NegativeAreaError : Exception { }
+#^^^^^ source.flint keyword.declaration.flint
+#     ^ source.flint
+#      ^^^^^^^^^^^^^^^^^ source.flint entity.name.type.flint
+#                       ^^^ source.flint
+#                          ^^^^^^^^^ source.flint entity.name.type.flint
+#                                   ^^^^^ source.flint
+>
+>class Guarded : BaseShape {
+#^^^^^ source.flint keyword.declaration.flint
+#     ^ source.flint
+#      ^^^^^^^ source.flint entity.name.type.flint
+#             ^^^ source.flint
+#                ^^^^^^^^^ source.flint entity.name.type.flint
+#                         ^^^ source.flint
+>    public label: String
+#^^^^ source.flint
+#    ^^^^^^ source.flint storage.modifier.flint
+#          ^^^^^^^^ source.flint
+#                  ^^^^^^ source.flint support.type.primitive.flint
+>    private secret: Int
+#^^^^ source.flint
+#    ^^^^^^^ source.flint storage.modifier.flint
+#           ^^^^^^^^^ source.flint
+#                    ^^^ source.flint support.type.primitive.flint
+>
+>    func check(n: Int): Void {
+#^^^^ source.flint
+#    ^^^^ source.flint keyword.declaration.flint
+#        ^ source.flint
+#         ^^^^^ source.flint entity.name.function.flint
+#              ^^^^ source.flint
+#                  ^^^ source.flint support.type.primitive.flint
+#                     ^^^ source.flint
+#                        ^^^^ source.flint support.type.primitive.flint
+#                            ^^^ source.flint
+>        while n > 0 {
+#^^^^^^^^ source.flint
+#        ^^^^^ source.flint keyword.control.flint
+#             ^^^ source.flint
+#                ^ source.flint keyword.operator.flint
+#                 ^ source.flint
+#                  ^ source.flint constant.numeric.integer.flint
+#                   ^^^ source.flint
+>            if n == 1 {
+#^^^^^^^^^^^^ source.flint
+#            ^^ source.flint keyword.control.flint
+#              ^^^ source.flint
+#                 ^^ source.flint keyword.operator.flint
+#                   ^ source.flint
+#                    ^ source.flint constant.numeric.integer.flint
+#                     ^^^ source.flint
+>                throw NegativeAreaError("bad")
+#^^^^^^^^^^^^^^^^ source.flint
+#                ^^^^^ source.flint keyword.control.flint
+#                     ^ source.flint
+#                      ^^^^^^^^^^^^^^^^^ source.flint entity.name.type.flint
+#                                       ^ source.flint
+#                                        ^ source.flint string.quoted.double.flint
+#                                         ^^^ source.flint string.quoted.double.flint
+#                                            ^ source.flint string.quoted.double.flint
+#                                             ^^ source.flint
+>            } else {
+#^^^^^^^^^^^^^^ source.flint
+#              ^^^^ source.flint keyword.control.flint
+#                  ^^^ source.flint
+>                print(n)
+#^^^^^^^^^^^^^^^^ source.flint
+#                ^^^^^ source.flint support.function.builtin.flint
+#                     ^^^^ source.flint
+>            }
+#^^^^^^^^^^^^^^ source.flint
+>        }
+#^^^^^^^^^^ source.flint
+>        try {
+#^^^^^^^^ source.flint
+#        ^^^ source.flint keyword.control.flint
+#           ^^^ source.flint
+>            print(len("abc"))
+#^^^^^^^^^^^^ source.flint
+#            ^^^^^ source.flint support.function.builtin.flint
+#                 ^ source.flint
+#                  ^^^ source.flint support.function.builtin.flint
+#                     ^ source.flint
+#                      ^ source.flint string.quoted.double.flint
+#                       ^^^ source.flint string.quoted.double.flint
+#                          ^ source.flint string.quoted.double.flint
+#                           ^^^ source.flint
+>        } catch (e: Exception) {
+#^^^^^^^^^^ source.flint
+#          ^^^^^ source.flint keyword.control.flint
+#               ^^^^^ source.flint
+#                    ^^^^^^^^^ source.flint entity.name.type.flint
+#                             ^^^^ source.flint
+>            print("caught")
+#^^^^^^^^^^^^ source.flint
+#            ^^^^^ source.flint support.function.builtin.flint
+#                 ^ source.flint
+#                  ^ source.flint string.quoted.double.flint
+#                   ^^^^^^ source.flint string.quoted.double.flint
+#                         ^ source.flint string.quoted.double.flint
+#                          ^^ source.flint
+>        }
+#^^^^^^^^^^ source.flint
+>    }
+#^^^^^^ source.flint
+>}
+#^^ source.flint
+>

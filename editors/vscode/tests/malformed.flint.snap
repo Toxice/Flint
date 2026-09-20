@@ -1,0 +1,37 @@
+>$ Malformed input. The lexer rejects these; the grammar must still not
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.flint comment.line.documentation.flint
+>$ let one bad line destroy the colouring of every line after it.
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.flint comment.line.documentation.flint
+>func unterminated(): Void {
+#^^^^ source.flint keyword.declaration.flint
+#    ^ source.flint
+#     ^^^^^^^^^^^^ source.flint entity.name.function.flint
+#                 ^^^^ source.flint
+#                     ^^^^ source.flint support.type.primitive.flint
+#                         ^^^ source.flint
+>    let broken: String = "no closing quote
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^^ source.flint
+#                ^^^^^^ source.flint support.type.primitive.flint
+#                      ^ source.flint
+#                       ^ source.flint keyword.operator.flint
+#                        ^ source.flint
+#                         ^ source.flint string.quoted.double.flint
+#                          ^^^^^^^^^^^^^^^^ source.flint string.quoted.double.flint
+>    let after: Int = 1
+#^^^^ source.flint
+#    ^^^ source.flint keyword.declaration.flint
+#       ^^^^^^^^ source.flint
+#               ^^^ source.flint support.type.primitive.flint
+#                  ^ source.flint
+#                   ^ source.flint keyword.operator.flint
+#                    ^ source.flint
+#                     ^ source.flint constant.numeric.integer.flint
+>    print(after)
+#^^^^ source.flint
+#    ^^^^^ source.flint support.function.builtin.flint
+#         ^^^^^^^^ source.flint
+>}
+#^^ source.flint
+>

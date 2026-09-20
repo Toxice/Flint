@@ -1,0 +1,7 @@
+$ Malformed input. The lexer rejects these; the grammar must still not
+$ let one bad line destroy the colouring of every line after it.
+func unterminated(): Void {
+    let broken: String = "no closing quote
+    let after: Int = 1
+    print(after)
+}
