@@ -1,0 +1,30 @@
+// A docstring documents the next declaration. It never affects execution.
+
+$ Adds two numbers.
+$ Both operands widen to Float if either is one.
+func add(a: Int, b: Int): Int {
+    $ A docstring in statement position documents nothing and is skipped.
+    return a + b
+}
+
+$ A counter you can bump.
+class Counter {
+    $ The current value.
+    n: Int
+
+    $ Starts the counter at zero.
+    Counter() { }
+
+    $ Increases the value by one.
+    func bump(): Void { object.n = object.n + 1 }
+}
+
+$ Entry point.
+func main(): Void {
+    print(add(2, 3))
+    let c: Counter = Counter()
+    c.bump()
+    c.bump()
+    print(c.n)
+    print("done")
+}

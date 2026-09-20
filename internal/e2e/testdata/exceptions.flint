@@ -1,0 +1,22 @@
+class Base : Exception { }
+class Derived : Base { }
+
+func deep(): Int {
+    throw Derived("from deep")
+}
+
+func middle(): Int {
+    return deep()
+}
+
+func main(): Void {
+    try {
+        try {
+            print(middle())
+        } catch (e: ArithmeticError) {
+            print("wrong handler")
+        }
+    } catch (e: Base) {
+        print("outer caught " + e.message)
+    }
+}

@@ -1,0 +1,85 @@
+// The sample program from the Flint specification.
+//
+// Two changes from the spec text: the Rectangle and Circle constructors now
+// assign object.name, which the spec's version accepted as a parameter and
+// then dropped, and $ docstrings have been added.
+
+$ Anything that has a measurable area and can describe itself.
+interface Shape {
+    $ The area in square units.
+    func area(): Float
+
+    $ A human-readable summary of this shape.
+    func describe(): String
+}
+
+$ Shared behaviour for every named shape.
+$ Subclasses supply area; describe is inherited.
+abstract class BaseShape : Shape {
+    $ The shape's display name.
+    name: String
+
+    BaseShape(name: String) { object.name = name }
+
+    func describe(): String {
+        return object.name + " has area " + object.area()
+    }
+}
+
+$ An axis-aligned rectangle.
+class Rectangle : BaseShape {
+    $ Extent along the x axis.
+    width: Float
+
+    $ Extent along the y axis.
+    height: Float
+
+    Rectangle(name: String, width: Float, height: Float) {
+        object.name = name
+        object.width = width
+        object.height = height
+    }
+
+    func area(): Float { return object.width * object.height }
+}
+
+$ A circle defined by its radius.
+class Circle : BaseShape {
+    $ Distance from the centre to the edge.
+    radius: Float
+
+    Circle(name: String, radius: Float) {
+        object.name = name
+        object.radius = radius
+    }
+
+    func area(): Float { return 3.14159 * object.radius * object.radius }
+}
+
+$ Raised when a shape reports a negative area.
+class NegativeAreaError : Exception { }
+
+$ Sums the areas of every shape in the list.
+$ Throws NegativeAreaError if any shape reports a negative area.
+func totalArea(shapes: [Shape]): Float {
+    let total: Float = 0.0
+    for (shape: Shape in shapes) {
+        let a: Float = shape.area()
+        if a < 0 {
+            throw NegativeAreaError("Area cannot be negative")
+        }
+        total = total + a
+    }
+    return total
+}
+
+$ Builds a couple of shapes and prints their combined area.
+func main(): Void {
+    let shapes: [Shape] = [Rectangle("Rect1", 4.0, 5.0), Circle("Circ1", 3.0)]
+
+    try {
+        print(totalArea(shapes))
+    } catch (e: NegativeAreaError) {
+        print("Error: " + e.message)
+    }
+}

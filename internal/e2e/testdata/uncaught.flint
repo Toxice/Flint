@@ -1,0 +1,6 @@
+class Boom : Exception { }
+
+func main(): Void {
+    print("before")
+    throw Boom("it broke")
+}

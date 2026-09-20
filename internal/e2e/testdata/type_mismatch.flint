@@ -1,0 +1,3 @@
+func main(): Void {
+    let x: Int = "not an int"
+}

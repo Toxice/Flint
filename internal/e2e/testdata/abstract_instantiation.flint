@@ -1,0 +1,7 @@
+abstract class B {
+    abstract func area(): Float
+}
+
+func main(): Void {
+    let b: B = B()
+}

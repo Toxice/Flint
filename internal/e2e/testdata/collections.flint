@@ -1,0 +1,21 @@
+func main(): Void {
+    let l: [Int] = [3, 1, 2]
+    print(l)
+    print(len(l))
+    l[0] = 99
+    print(l)
+
+    let empty: [Int] = []
+    print(empty)
+    print(len(empty))
+
+    let m: [String: Int] = ["b": 2, "a": 1]
+    print(m)
+    m["c"] = 3
+    print(m)
+    print(m["a"])
+    print(len(m))
+
+    let me: [String: Int] = [:]
+    print(me)
+}

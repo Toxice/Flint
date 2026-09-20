@@ -1,0 +1,7 @@
+interface Shape {
+    func area(): Float
+}
+
+class Square : Shape { }
+
+func main(): Void { }

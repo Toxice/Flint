@@ -1,0 +1,9 @@
+func f(): Int {
+    if true {
+        return 1
+    }
+}
+
+func main(): Void {
+    print(f())
+}

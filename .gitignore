@@ -1,0 +1,16 @@
+# Build output (anchored: cmd/flint/ is source and must not be ignored)
+/flint
+/flint.exe
+/dist/
+
+# Go
+*.test
+*.out.tmp
+coverage.out
+
+# Editor / OS
+.obsidian/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

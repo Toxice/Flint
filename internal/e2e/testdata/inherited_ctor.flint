@@ -1,0 +1,9 @@
+class NegativeAreaError : Exception { }
+
+func main(): Void {
+    try {
+        throw NegativeAreaError("Area cannot be negative")
+    } catch (e: NegativeAreaError) {
+        print("Error: " + e.message)
+    }
+}

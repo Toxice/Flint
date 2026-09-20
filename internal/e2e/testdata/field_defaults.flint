@@ -1,0 +1,30 @@
+class Other {
+    func hi(): Void { print("hi") }
+}
+
+class Holder {
+    n: Int
+    f: Float
+    b: Bool
+    s: String
+    l: [Int]
+    m: [String: Int]
+    o: Other
+
+    Holder() { }
+}
+
+func main(): Void {
+    let h: Holder = Holder()
+    print(h.n)
+    print(h.f)
+    print(h.b)
+    print("s=" + h.s)
+    print(h.l)
+    print(h.m)
+    try {
+        h.o.hi()
+    } catch (e: NullError) {
+        print("NullError on an uninitialized field")
+    }
+}

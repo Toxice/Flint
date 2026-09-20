@@ -1,0 +1,5 @@
+caught division by zero
+caught modulo by zero
+caught an IndexError
+caught an IndexError
+caught no entry for key b

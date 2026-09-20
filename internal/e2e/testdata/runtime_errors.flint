@@ -1,0 +1,32 @@
+func main(): Void {
+    let z: Int = 0
+    try {
+        print(1 / z)
+    } catch (e: ArithmeticError) {
+        print("caught " + e.message)
+    }
+    try {
+        print(1 % z)
+    } catch (e: ArithmeticError) {
+        print("caught " + e.message)
+    }
+
+    let l: [Int] = [1, 2]
+    try {
+        print(l[5])
+    } catch (e: IndexError) {
+        print("caught an IndexError")
+    }
+    try {
+        print(l[-1])
+    } catch (e: IndexError) {
+        print("caught an IndexError")
+    }
+
+    let m: [String: Int] = ["a": 1]
+    try {
+        print(m["b"])
+    } catch (e: IndexError) {
+        print("caught " + e.message)
+    }
+}
