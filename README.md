@@ -1,5 +1,7 @@
 # Flint
 
+<img src="assets/flint-icon.png" alt="Flint logo" width="150" align="right">
+
 A working interpreter for **Flint**, the language described in
 [`flint-language-spec.md`](flint-language-spec.md): Java's structural
 discipline — classes, interfaces, mandatory type annotations — without Java's

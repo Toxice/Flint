@@ -1,0 +1,4 @@
+$ Prints a greeting. Every Flint program starts at main.
+func main(): Void {
+    print("Hello, world!")
+}
