@@ -224,7 +224,9 @@ internal/doc/         renders $ docstrings for `flint doc`
 internal/pipeline/    the four stages wired together
 internal/e2e/         whole-program golden tests
 examples/             the spec's sample program, verbatim
-docs/superpowers/plans/   the implementation plan this was built from
+assets/               project icon (500px PNG, 2048px JPEG master)
+editors/vscode/       VS Code language extension
+docs/superpowers/plans/   the implementation plans this was built from
 ```
 
 ## Contributing
@@ -242,6 +244,17 @@ Forks and pull requests are welcome. Requirements for a change to be merged:
 
 No external dependencies. The interpreter is standard library only, and the
 intent is to keep it that way.
+
+## Editor support
+
+A VS Code extension lives in [`editors/vscode/`](editors/vscode/). It gives
+`.flint` files syntax highlighting, the Flint file icon, bracket matching,
+and comment toggling.
+
+```bash
+cd editors/vscode && npm install && npm run package
+code --install-extension flint-lang-0.1.0.vsix
+```
 
 ## License
 
